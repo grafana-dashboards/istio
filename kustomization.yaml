@@ -12,20 +12,20 @@ commonAnnotations:
 
 configMapGenerator:
   - files:
-      - pilot-dashboard.json
+      - dashboards/pilot-dashboard.json
     name: dashboard-pilot
   - files:
-      - istio-workload-dashboard.json
+      - dashboards/istio-workload-dashboard.json
     name: dashboard-istio-workload
   - files:
-      - istio-service-dashboard.json
+      - dashboards/istio-service-dashboard.json
     name: dashboard-istio-service
   - files:
-      - istio-performance-dashboard.json
+      - dashboards/istio-performance-dashboard.json
     name: dashboard-istio-performance
   - files:
-      - istio-mesh-dashboard.json
+      - dashboards/istio-mesh-dashboard.json
     name: dashboard-istio-mesh
   - files:
-      - istio-extension-dashboard.json
+      - dashboards/istio-extension-dashboard.json
     name: dashboard-istio-extension
