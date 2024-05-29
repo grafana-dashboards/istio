@@ -1,0 +1,31 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: monitoring
+
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    grafana_dashboard: "1"
+commonAnnotations:
+  grafana_folder: "istio"
+
+configMapGenerator:
+  - files:
+      - pilot-dashboard.json
+    name: dashboard-pilot
+  - files:
+      - istio-workload-dashboard.json
+    name: dashboard-istio-workload
+  - files:
+      - istio-service-dashboard.json
+    name: dashboard-istio-service
+  - files:
+      - istio-performance-dashboard.json
+    name: dashboard-istio-performance
+  - files:
+      - istio-mesh-dashboard.json
+    name: dashboard-istio-mesh
+  - files:
+      - istio-extension-dashboard.json
+    name: dashboard-istio-extension
